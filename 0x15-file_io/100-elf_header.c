@@ -21,7 +21,7 @@ void close_elf(int elf);
  * check_elf - Checks if a file is an ELF file.
  * @e_ident: A pointer to an array containing the ELF magic numbers.
  *
- * Description: If the file is not an ELF file - exit code 98.
+ * Description: If the file is not an ELF file, it exits with code 98.
  */
 void check_elf(unsigned char *e_ident)
 {
@@ -112,9 +112,9 @@ void print_data(unsigned char *e_ident)
 }
 
 /**
- *  * print_version - Prints the version of an ELF header.
- *   * @e_ident: A pointer to an array containing the ELF version.
- *    */
+ * print_version - Prints the version of an ELF header.
+ * @e_ident: A pointer to an array containing the ELF version.
+ */
 void print_version(unsigned char *e_ident)
 {
 	 printf(" Version: %d",
@@ -238,7 +238,6 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 
 	if (e_ident[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)e_entry);
-
 	else
 		printf("%#lx\n", e_entry);
 }
@@ -247,7 +246,7 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident)
  * close_elf - Closes an ELF file.
  * @elf: The file descriptor of the ELF file.
  *
- * Description: If the file cannot be closed - exit code 98.
+ * Description: If the file cannot be closed, it exits with code 98.
  */
 void close_elf(int elf)
 {
@@ -268,7 +267,7 @@ void close_elf(int elf)
  * Return: 0 on success.
  *
  * Description: If the file is not an ELF File or
- * the function fails - exit code 98.
+ * the function fails, it exits with code 98.
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
